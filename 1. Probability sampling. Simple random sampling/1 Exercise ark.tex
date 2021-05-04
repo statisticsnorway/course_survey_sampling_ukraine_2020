@@ -1,0 +1,146 @@
+\documentclass[12pt]{article}
+
+\usepackage[margin=0.6in]{geometry}
+\usepackage{graphicx}
+\usepackage{amsmath}
+\usepackage{float}
+\usepackage[dvipsnames]{xcolor}
+\usepackage{etoolbox}
+
+\pagestyle{plain}
+
+\begin{document}
+
+\title{Exercise ark \#1.\\ Probability sampling. Simple random sampling}
+\author{O\u{g}uz--Alper, Melike \& Pekarskaya, Tatsiana, Statistics Norway}
+\maketitle
+
+\section*{Exercise 0}
+
+\begin{enumerate}
+\item Explain in your own words the reasons why it may be an advantage to select a sample instead of doing a census
+\item Discuss the properties of a good sample
+\end{enumerate}
+
+\section*{Exercise 1}
+
+For each survey further, describe the target population, sampling frame, sampling unit and observation unit. Discuss any possible sources of selection bias or inaccuracy of responses:
+\begin{enumerate}
+\item Potential jurors in some jurisdictions are chosen from a list of county residents who are registered voters or licensed drivers over age 18. In the fourth quarter of 1994, 100 300 jury summons were mailed to Maricopa County, Arizona, residents. Approximately 23 000 of those were returned from the post office as undeliverable. Approximately 7 000 persons were unqualified for service because they were not citizens, were under 18, were convicted felons, or other reason that disqualified them from serving on a jury. An additional 22 000 were excused from jury service because of illness, financial
+hardship, military service, or other acceptable reason. The final sample consists of persons who appear for jury duty; some unexcused jurors fail to appear.\hfill (Lohr, 2019, p.20)
+\item A survey is conducted to find the average weight of cows in a region. A list of all farms is available for the region, and 50 farms are selected at random. Then the weight of each cow at the 50 selected farms recorded. \hfill (Lohr, 2019, p.20)
+\item Kripke et al. (2002) claim that persons who sleep 8 or more hours per night have a higher mortality risk than persons who sleep 6 or 7 hours. They analyzed data from the 1982 Cancer Prevention Study II of the American Cancer Society, a national survey taken by about 1.1 million people. The survival or date of death was determined for about 98\% of the sample six years later. Most of the respondents were friends and relatives of American Cancer Society volunteers; the purpose of the original survey was to explore factors associated with the development of cancer, but the survey also contained a few questions about sleep and insomnia. \hfill (Lohr, 2019, p.21)
+
+\end{enumerate}
+
+\section*{Exercise 2}
+Let $N=6$ and $n=3$. For purposes of studying sampling distributions, assume that all
+population values are known. 
+\begin{eqnarray*}
+y_1=98 \quad y_2=102 \quad y_3=154 \\
+y_4=133 \quad y_5=190 \quad y_6=175
+\end{eqnarray*}
+We are interested in $\bar{y}_U$, the population mean. Two sampling plans are proposed.\\
+$\bullet$ Plan 1. Eight possible samples may be chosen.
+\begin{center}
+\begin{tabular}{ccc}
+Sample number & Sample, S & P(S)\\
+\hline
+1 &\{1,3,5\}& 1/8\\
+2 &\{1,3,6\}& 1/8\\
+3 &\{1,4,5\}& 1/8\\
+4 &\{1,4,6\}& 1/8\\
+5 &\{2,3,5\}& 1/8\\
+6 &\{2,3,6\}& 1/8\\
+7 &\{2,4,5\}& 1/8\\
+8 &\{2,4,6\}& 1/8\\
+\end{tabular}
+\end{center}
+$\bullet$ Plan 2. Three possible samples may be chosen.
+
+\begin{center}
+\begin{tabular}{ccc}
+Sample number & Sample, S & P(S)\\
+\hline
+1 &\{1,4,6\}& 1/4\\
+2 &\{2,3,6\}& 1/2\\
+3 &\{1,3,5\}& 1/4\\
+\end{tabular}
+\end{center}
+
+\begin{enumerate}
+\item What is the value of $\bar{y}_U$?
+\item Let $\bar{y}$ be the mean of the sample values. For each sampling plan, find \\
+(i) $E(\bar{y})$; (ii) $V(\bar{y})$; (iii) Bias($\bar{y}$); (iv) MSE($\bar{y}$).
+\item Which sampling plan do you think is better? Why? \hfill (Lohr, 2019, p.61)
+\end{enumerate}
+
+\section*{Exercise 3}
+\textbf{\color{ForestGreen}(R code available)} Let  $U$ be a population of size $N=8$ with the index set $U = \{1, 2, 3, 4, 5, 6, 7, 8\}$. The values of $y_i$ are 
+\begin{center}
+\begin{tabular}{ccccccccccc}
+$i$ & \vline & 1 & 2 & 3 & 4 & 5 & 6 & 7 & 8 \\
+\hline
+$y_i$ & \vline &  1 & 2 & 4 & 4 & 7 & 7 & 7 & 8
+\end{tabular}
+\end{center}
+
+For this population, consider sampling scheme 
+\begin{center}
+\begin{tabular}{cc}
+$S$ & $P(S)$\\
+\hline
+\{1,3,5,6\}& 1/8\\
+\{2,3,7,8\}& 1/4\\
+\{1,4,6,8\} &1/8\\
+\{2,4,6,8\} &3/8\\
+\{4,5,7,8\} &1/8\\
+\end{tabular}
+\end{center}
+
+\begin{enumerate}
+\item Find the probability of selection $\pi_i$ for each unit i.
+\item What is the sampling distribution of $\hat{t}$ = 8$\bar{y}$? 
+\item Assume a SRS of size 3 without replacement and find expectation and variance of $\bar{y}$\\
+\item Assume a SRS of size 3 with replacement and find expectation and variance of $\bar{y}$\\
+\item For 3. and 4., draw the histogram of the sampling distribution of $\bar{y}$. Which sampling distribution has the smaller variance, and why? \hfill (Lohr, 2019, p.61)
+\end{enumerate}
+
+
+\section*{Exercise 4}
+\textbf{\color{ForestGreen}(R code available)} A university has 807 faculty members. For each faculty member, the number of refereed publications was recorded. This number is not directly available on the database,
+so requires the investigator to examine each record separately. A frequency table for number of refereed publications is given below for an SRS of 50 faculty members.
+
+\begin{center}
+\begin{tabular}{lrrrrrrrrrrrr}
+Refereed Publications & \vline & 0& 1& 2& 3& 4& 5& 6& 7& 8& 9& 10 \\
+\hline
+Faculty Members & \vline &  28& 4& 3& 4& 4& 2& 1& 0& 2& 1& 1\\
+\end{tabular}
+\end{center}
+
+\begin{enumerate}
+\item Plot the data using a histogram. Describe the shape of the data.
+\item Estimate the mean number of publications per faculty member, and give the SE for your estimate.
+\item Do you think that $\bar{y}$ from 2. will be approximately normally distributed? Why or why not?
+\item Estimate the proportion of faculty members with no publications and give a 95\% confidence interval. \hfill (Lohr, 2019, pp.62-63)
+\end{enumerate}
+
+\section*{Exercise 5}
+A typical opinion poll surveys about 1000 adults. Suppose that the sampling frame contains 100 million adults including yourself, and that an SRS of 1000 adults is chosen from the frame.
+\begin{enumerate}
+\item What is the probability that you are selected to be in the sample?
+\item Now suppose that 2000 such samples are selected, each sample selected independently of the others. What is the probability that you will not be in any of the
+samples?
+\item How many samples must be selected for you to have a 0.5 probability of being in at least one sample?
+\hfill (Lohr, 2019, p.68)
+\end{enumerate}
+
+\section*{Exercise 6}
+It is important to keep track on unemployment level from month to month. Let’s assume that you have been assigned a task to find a size of SRS n. You have no idea about the proportion of unemployed people in the population, but you read in literature that p = 0.5 is often used when you have no idea about the value of proportion. So you decide to use as p = 0.5. Assume that population size is large and, thus, you can ignore fpc.
+\begin{itemize}
+\item What is the value of n if your margins of error is c 0.001, 0.002, 0.005? 
+\item	Why proportion of interest p = 0.5 is often used when you have no idea about the value of the proportion?
+\end{itemize}
+
+\end{document}
