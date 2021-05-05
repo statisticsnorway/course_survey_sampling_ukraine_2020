@@ -1,4 +1,4 @@
-# course_survey_sampling_ukraina_2020
+# course_survey_sampling_ukraine_2020
 
 # What you find in the directory?
 Oguz-Alper, Melike & Pekarskaya, Tatsiana, Statistics Norway
